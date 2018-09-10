@@ -18,7 +18,7 @@ if __name__=="__main__":
     #定义队列
     result=channel.queue_declare(exclusive=True)
     queue_name=result.method.queue
-    #绑定转换器和队列 *匹配一个单词  #匹配一个或多个单词
+    #绑定转换器和队列 抓发给主题转发器的消息必须是用小数点隔开的标识符，socket.message  *代替一个标识符  #代替零个或多个标识符
     routing_key=["type.*"]
     for item in routing_key:
         channel.queue_bind(exchange="topic_message",queue=queue_name,routing_key=item)

@@ -12,6 +12,6 @@ if __name__=="__main__":
     # 定义转换器 direct topic主题类型 headers  fanout
     channel.exchange_declare(exchange="topic_message", exchange_type="topic")
     # 发送消息
-    channel.basic_publish(exchange="topic_message", routing_key="type.ss", body="top消息")
+    channel.basic_publish(exchange="topic_message", routing_key="type.133", body=str("topic111消息"))
     # 关闭连接
     connection.close()
